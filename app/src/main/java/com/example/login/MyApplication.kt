@@ -5,7 +5,7 @@ import com.base.library.login.LoginManager
 
 /**
  * Description:
- *
+ * App 入口
  *
  * @author  Alpinist Wang
  * Company: Mobile CPX
