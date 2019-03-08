@@ -129,17 +129,13 @@ class MyApplication : Application() {
             
             - 在Mac上, 运行:
             
-            ```diff
-            - keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64</font>
-            ```
+            keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64</font>
             
             然后输入密码, 初始密码是 "android"
             
             - 在Windows上, 运行:
             
-            ```diff
-            - keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64</font>
-            ```
+            keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64</font>
             
             然后输入密码, 初始密码是 "android"
             
@@ -149,7 +145,7 @@ class MyApplication : Application() {
         
 - Google: 获取 google web client id
     
-    1. 访问[Firebase 控制台](https://console.firebase.google.com/)
+    1. 访问 [Firebase 控制台](https://console.firebase.google.com/)
     
     2. 创建一个项目,在项目设置中添加 SHA1 和 SHA256 指纹
     
@@ -161,7 +157,7 @@ class MyApplication : Application() {
     
 - Twitter: 获取 twitter consumer key 和 twitter consumer secret
 
-    1. 访问[Twitter 控制台](https://developer.twitter.com/en/apps)
+    1. 访问 [Twitter 控制台](https://developer.twitter.com/en/apps)
     
     2. 创建应用
     
@@ -205,7 +201,7 @@ abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {
     }
 }
 ```
-## Bugs 反馈
+## Bug 反馈
 
 如果您有任何反馈或建议，欢迎提交到 [Github issues](https://github.com/wkxjc/LoginManager/issues).
 

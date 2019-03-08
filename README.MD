@@ -129,17 +129,13 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
             
             - On Mac, run:
             
-            ```diff
-            - keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64</font>
-            ```
+            keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64</font>
             
             Then enter password, The initial password is "android"
             
             - on Windows, run:
             
-            ```diff
-            - keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64</font>
-            ```
+            keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64</font>
             
             Then enter password, The initial password is "android"
             
@@ -205,7 +201,7 @@ abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {
     }
 }
 ```
-## Bugs Feedback
+## Bug Feedback
 
 If you have any questions or suggestions, feel free to create an [issue](https://github.com/wkxjc/LoginManager/issues).
 
