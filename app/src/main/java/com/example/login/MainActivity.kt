@@ -7,6 +7,14 @@ import com.base.library.login.common.bean.LoginAuth
 import com.base.library.login.common.constants.LoginConstants
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * Description:
+ * Main Page
+ *
+ * @author  Alpinist Wang
+ * Company: Mobile CPX
+ * Date:    2019/3/8
+ */
 class MainActivity : BaseLoginActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
