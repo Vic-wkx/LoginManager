@@ -24,7 +24,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-        implementation 'com.github.wkxjc:LoginManager:Tag'
+        implementation 'com.github.wkxjc:LoginManager:1.0'
 }
 ```
 
