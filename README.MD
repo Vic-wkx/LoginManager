@@ -151,7 +151,7 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
     
         How to get SHA1 and SHA256 fingerprint？
         
-        2.1.get debug SHA1 and SHA256
+        1.get debug SHA1 and SHA256
         
         - on Mac, run:
         
@@ -165,7 +165,7 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
         
         Then enter password, The initial password is "android"
         
-        2.2.get release SHA1 and SHA256
+        2.get release SHA1 and SHA256
         
         keytool -exportcert -list -v \
         -alias <your-key-name> -keystore <path-to-production-keystore>
