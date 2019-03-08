@@ -125,7 +125,7 @@ class MyApplication : Application() {
         
         &rarr; 填写 Key Hashes
             
-            **如何获取 Key Hashes?**
+            如何获取 Key Hashes?
             
             - 在Mac上, 运行:
             
@@ -149,9 +149,9 @@ class MyApplication : Application() {
     
     2. 创建一个项目,在项目设置中添加 SHA1 和 SHA256 指纹
     
-        **如何获取 SHA1 和 SHA256 指纹？**
+        如何获取 SHA1 和 SHA256 指纹？
         
-        1. 获取调试签名 SHA1 和 SHA256
+        (1). 获取调试签名 SHA1 和 SHA256
         
         - 在Mac上，运行：
         
@@ -165,7 +165,7 @@ class MyApplication : Application() {
         
         然后输入密码, 初始密码是 "android"
         
-        2. 获取正式签名 SHA1 和 SHA256
+        (1). 获取正式签名 SHA1 和 SHA256
         
         keytool -exportcert -list -v \
         -alias 密钥名 -keystore 密钥库路径

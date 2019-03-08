@@ -125,7 +125,7 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
         
         &rarr; fill in Key Hashes
             
-            **How to get Key Hashes?**
+            How to get Key Hashes?
             
             - On Mac, run:
             
@@ -149,9 +149,9 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
     
     2. Create a project, add SHA1 and SHA256 fingerprint in project settings
     
-        **How to get SHA1 and SHA256 fingerprint?**
+        How to get SHA1 and SHA256 fingerprint?
         
-        1. get debug SHA1 and SHA256
+        (1). get debug SHA1 and SHA256
         
         - on Mac, run:
         
@@ -165,7 +165,7 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
         
         Then enter password, The initial password is "android"
         
-        2. get release SHA1 and SHA256
+        (2). get release SHA1 and SHA256
         
         keytool -exportcert -list -v \
         -alias <your-key-name> -keystore <path-to-production-keystore>
