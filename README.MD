@@ -1,4 +1,4 @@
-![release](https://img.shields.io/badge/release-1.0-green.svg)
+![release](https://img.shields.io/badge/release-1.1-green.svg)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # LoginManager
@@ -24,7 +24,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-        implementation 'com.github.wkxjc:LoginManager:1.0'
+        implementation 'com.github.wkxjc:LoginManager:v1.1'
 }
 ```
 
