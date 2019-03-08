@@ -1,15 +1,15 @@
 ![release](https://img.shields.io/badge/release-1.2-green.svg)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
-# LoginManager English Doc | [中文文档](https://github.com/wkxjc/LoginManager/blob/master/README_CN.MD)
+# LoginManager 中文文档 | [English Doc](https://github.com/wkxjc/LoginManager/blob/master/README.MD)
 
-## Description
+## 描述
 
-This is a library to help you add login by Google, Facebook and Twitter to your Android app.
+这是一个帮助添加Google，Facebook，Twitter登录的库。
 
-## Download
+## 下载
 
-Step 1. Add it in your root build.gradle at the end of repositories:
+第一步. 在根目录的*build.gradle*中添加以下代码:
 
 ```
 allprojects {
@@ -20,7 +20,7 @@ allprojects {
 }
 ```
 
-Step 2. Add the dependency
+第二步. 添加gradle依赖
 
 ```
 dependencies {
@@ -29,9 +29,9 @@ dependencies {
 }
 ```
 
-## How to use
+## 如何使用
 
-Login by Google, Facebook or Twitter just need one line of code:
+Google, Facebook 或 Twitter 登录仅需要一行代码:
 
 ```
 class MainActivity : BaseLoginActivity() {
@@ -61,11 +61,11 @@ class MainActivity : BaseLoginActivity() {
     }
 }
 ```
-## Configuration
+## 配置
 
-Before that, you need some prepare work.
+在这之前，你需要一些准备工作.
 
-Step 1. add this code in your AndroidManifest.xml:
+第一步. 在 *AndroidManifest.xml* 添加以下代码:
 
 ```
 <!--Google Login-->
@@ -85,7 +85,7 @@ Step 1. add this code in your AndroidManifest.xml:
         android:value="@string/twitter_consumer_secret"/>
 ```
 
-Step 2. add this code in your strings.xml, and replace these keys:
+第二步. 在 *strings.xml* 中添加以下代码, 并替换这些key:
 
 ```
 <string name="google_web_client_id">Your google web client id</string>
@@ -94,7 +94,7 @@ Step 2. add this code in your strings.xml, and replace these keys:
 <string name="twitter_consumer_secret">Your twitter consumer secret</string>
 ```
 
-Step 3. init LoginManager in Application:
+第三步. 在Application中初始化LoginManager:
 
 ```
 class MyApplication : Application() {
@@ -105,83 +105,83 @@ class MyApplication : Application() {
 }
 ```
 
-Step 4. add *google-service.json* of firebase to app/ directory of main module:
+第四步. 添加firebase的 *google-service.json* 文件到主模块 app/ 目录下
 
-## How to get these key
+## 如何获取这些key
 
-- Facebook: get facebook app id
+- Facebook: 获取 facebook app id
 
-    1. Go to the [Facebook Console](https://developers.facebook.com/apps/)
+    1. 访问 [Facebook控制台](https://developers.facebook.com/apps/)
     
-    2. create an application
+    2. 创建一个应用
     
-    3. Choose Setting &rarr; Basic 
+    3. 选择 设置 &rarr; 基本 
     
-        &rarr; add Android platform 
+        &rarr; 添加 Android 平台 
         
-        &rarr; fill in Google Play Package Name (Whatever the app is published in google play or not, just fill in the package name of your app) 
+        &rarr; 填写 Google Play Package Name (无论这个app是否在 google play 上架, 只要填写app的包名即可) 
         
-        &rarr; fill in Class Name(Usually, fill in the MainActivity with package name)
+        &rarr; 填写 Class Name(通常填入带包名的 MainActivity)
         
-        &rarr; fill in Key Hashes
+        &rarr; 填写 Key Hashes
             
-            How to get Key Hashes?
+            如何获取 Key Hashes?
             
-            - On Mac, run:
+            - 在Mac上, 运行:
             
             ```diff
             - keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64</font>
             ```
             
-            Then enter password, The initial password is "android"
+            然后输入密码, 初始密码是 "android"
             
-            - on Windows, run:
+            - 在Windows上, 运行:
             
             ```diff
             - keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64</font>
             ```
             
-            Then enter password, The initial password is "android"
+            然后输入密码, 初始密码是 "android"
             
-        &rarr; turn on "Single Sign On"
+        &rarr; 打开 "单点登录"
         
-        &rarr; click "Save Changes" button, ignore Google Play verify package name warning.
+        &rarr; 点击 "保存修改" 按钮, 忽略 Google Play 验证包名警告.
         
-- Google: get google web client id
+- Google: 获取 google web client id
     
-    1. Go to [Firebase Console](https://console.firebase.google.com/)
+    1. 访问[Firebase 控制台](https://console.firebase.google.com/)
     
-    2. Create a project, add SHA1 and SHA256 fingerprint in project settings
+    2. 创建一个项目,在项目设置中添加 SHA1 和 SHA256 指纹
     
-    3. in Develop &rarr; Authentication &rarr; login method &rarr; enable Google Login
+    3. 在 开发 &rarr; Authentication &rarr; 登录方法 &rarr; 启用Google登录
     
-    3. Download *google-service.json*, move it to app/ directory of main module
+    3. 下载 *google-service.json*, 放置在主模块的 app/ 目录下
     
-    4. get the web client id in *google-service.json*
+    4. 在 *google-service.json* 中获取 google web client id
     
-- Twitter: get twitter consumer key and twitter consumer secret
+- Twitter: 获取 twitter consumer key 和 twitter consumer secret
 
-    1. Go to [Twitter Console](https://developer.twitter.com/en/apps)
+    1. 访问[Twitter 控制台](https://developer.twitter.com/en/apps)
     
-    2. create application
+    2. 创建应用
     
-        &rarr; fill in app name
+        &rarr; 填写 app 名字
         
-        &rarr; fill in description
+        &rarr; 填写描述
         
-        &rarr; turn on "enable Twitter Login"
+        &rarr; 打开 "启用 Twitter 登录"
         
-        &rarr; fill in privacy policy
+        &rarr; 填写隐私权政策
         
-        &rarr; fill in team url
+        &rarr; 填写 team url
         
-    3. add "twittersdk://" to callback url
+    3. 将 "twittersdk://" 添加到 callback url
     
-    4. get API Key and API secret key.
+    4. 获取 API Key 和 API secret key.
 
-## Do not want to extends BaseLoginActivity?
+## 不希望继承BaseLoginActivity?
 
-You can directly use LoginManager like BaseLoginActivity:
+你可以仿照 BaseLoginActivity，直接使用 LoginManager:
 
 ```
 abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {
@@ -205,9 +205,9 @@ abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {
     }
 }
 ```
-## Bugs Feedback
+## Bugs 反馈
 
-If you have any questions or suggestions, feel free to create an [issue](https://github.com/wkxjc/LoginManager/issues).
+如果您有任何反馈或建议，欢迎提交到 [Github issues](https://github.com/wkxjc/LoginManager/issues).
 
 ## LICENSE
 
