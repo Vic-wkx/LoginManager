@@ -20,4 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep com.base.library.login.** {;;}
+-keep class com.base.library.login.** {;;}
