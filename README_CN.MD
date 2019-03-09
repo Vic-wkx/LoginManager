@@ -26,7 +26,7 @@ allprojects {
 
 ```
 dependencies {
-        implementation 'com.github.wkxjc:LoginManager:1.3'
+        implementation 'com.github.wkxjc:LoginManager:2.0'
         // 确保添加了support-design依赖，可以使用你自己使用的版本
         implementation 'com.android.support:design:28.0.0'
 }
