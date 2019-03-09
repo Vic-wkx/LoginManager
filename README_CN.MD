@@ -1,4 +1,4 @@
-![release](https://img.shields.io/badge/release-1.3-green.svg)
+[![](https://jitpack.io/v/wkxjc/LoginManager.svg)](https://jitpack.io/#wkxjc/LoginManager)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # LoginManager 中文文档 | [English Doc](https://github.com/wkxjc/LoginManager/blob/master/README.MD)
