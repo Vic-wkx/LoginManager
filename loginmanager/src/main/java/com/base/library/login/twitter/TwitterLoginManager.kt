@@ -18,7 +18,8 @@ import com.twitter.sdk.android.core.models.User
  * Company: Mobile CPX
  * Date:    2018/12/4
  */
-class TwitterLoginManager(val context: Context, private val onLoginListener: OnLoginListener) : Callback<TwitterSession>() {
+class TwitterLoginManager(val context: Context, private val onLoginListener: OnLoginListener) :
+    Callback<TwitterSession>() {
 
     private val twitterLoginButton = TwitterLoginButton(context)
     private val auth = LoginAuth()
@@ -42,17 +43,19 @@ class TwitterLoginManager(val context: Context, private val onLoginListener: OnL
         auth.token = token
         auth.twitterSecret = secret
         TwitterCore.getInstance().apiClient.accountService.verifyCredentials(true, false, true)
-                .enqueue(object : Callback<User>() {
-                    override fun success(result: Result<User>?) {
-                        auth.email = result?.data?.email ?: ""
-                        onLoginListener.onLoginSuccess(TWITTER, auth)
-                    }
+            .enqueue(object : Callback<User>() {
+                override fun success(result: Result<User>?) {
+                    val user = result?.data
+                    auth.email = user?.email ?: ""
+                    auth.name = user?.name ?: ""
+                    auth.avatar = user?.profileImageUrlHttps ?: ""
+                    onLoginListener.onLoginSuccess(TWITTER, auth)
+                }
 
-                    override fun failure(exception: TwitterException?) {
-                        onLoginListener.onLoginSuccess(TWITTER, auth)
-                    }
-
-                })
+                override fun failure(exception: TwitterException?) {
+                    onLoginListener.onLoginSuccess(TWITTER, auth)
+                }
+            })
     }
 
     override fun failure(exception: TwitterException?) {

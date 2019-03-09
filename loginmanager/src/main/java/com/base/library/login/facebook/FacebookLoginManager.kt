@@ -20,8 +20,9 @@ import com.facebook.login.widget.LoginButton
  * Company: Mobile CPX
  * Date:    2018/12/4
  */
-class FacebookLoginManager(private val context: Context, private val onLoginListener: OnLoginListener) : FacebookCallback<LoginResult>,
-        GraphRequest.Callback {
+class FacebookLoginManager(private val context: Context, private val onLoginListener: OnLoginListener) :
+    FacebookCallback<LoginResult>,
+    GraphRequest.Callback {
 
     private val callbackManager by lazy { CallbackManager.Factory.create() }
     private val loginButton by lazy { LoginButton(context) }
@@ -59,7 +60,11 @@ class FacebookLoginManager(private val context: Context, private val onLoginList
     }
 
     override fun onCompleted(response: GraphResponse?) {
+        val name = response?.jsonObject?.getString("name") ?: ""
+        val avatar = response?.jsonObject?.getJSONObject("picture")?.getJSONObject("data")?.getString("url") ?: ""
         val email = response?.jsonObject?.getString("email") ?: ""
+        auth.name = name
+        auth.avatar = avatar
         auth.email = email
         onLoginListener.onLoginSuccess(FACEBOOK, auth)
     }
