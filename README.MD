@@ -3,6 +3,8 @@
 
 # LoginManager English Doc | [中文文档](https://github.com/wkxjc/LoginManager/blob/master/README_CN.MD)
 
+<img src="screenshots/loginDemo.gif" width="240" align="right" hspace="20">
+
 ## Description
 
 This is a library to help you add login by Google, Facebook and Twitter to your Android app.

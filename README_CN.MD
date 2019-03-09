@@ -3,6 +3,8 @@
 
 # LoginManager 中文文档 | [English Doc](https://github.com/wkxjc/LoginManager/blob/master/README.MD)
 
+<img src="screenshots/loginDemo.gif" width="240" align="right" hspace="20">
+
 ## 描述
 
 这是一个帮助添加Google，Facebook，Twitter登录的库。
