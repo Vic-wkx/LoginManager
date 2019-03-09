@@ -151,30 +151,30 @@ class MyApplication : Application() {
     1. Go to [Firebase Console](https://console.firebase.google.com/)
     
     2. Create a project, add SHA1 and SHA256 fingerprint in project settings
-    
-        How to get SHA1 and SHA256 fingerprint?
-        
-        (1). get debug SHA1 and SHA256
-        
-        - on Mac, run:
-        
-        keytool -exportcert -list -v \
-        -alias androiddebugkey -keystore ~/.android/debug.keystore
-        
-        - on Windows, run:
-        
-        keytool -exportcert -list -v \
-        -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
-        
-        Then enter password, The initial password is "android"
-        
-        (2). get release SHA1 and SHA256
-        
-        keytool -exportcert -list -v \
-        -alias <your-key-name> -keystore <path-to-production-keystore>
-        
-        Then enter keystore password
-    
+           
+           How to get SHA1 and SHA256 fingerprint?
+           
+           (1). get debug SHA1 and SHA256
+           
+           - on Mac, run:
+           
+           keytool -exportcert -list -v \
+           -alias androiddebugkey -keystore ~/.android/debug.keystore
+           
+           - on Windows, run:
+           
+           keytool -exportcert -list -v \
+           -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+           
+           Then enter password, The initial password is "android"
+           
+           (2). get release SHA1 and SHA256
+           
+           keytool -exportcert -list -v \
+           -alias <your-key-name> -keystore <path-to-production-keystore>
+           
+           Then enter keystore password
+           
     3. in Develop &rarr; Authentication &rarr; login method &rarr; enable Google Login
     
     4. Download *google-service.json*, get the web client id in *google-service.json*
