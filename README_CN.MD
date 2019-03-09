@@ -151,30 +151,30 @@ class MyApplication : Application() {
     1. 访问 [Firebase 控制台](https://console.firebase.google.com/)
     
     2. 创建一个项目,在项目设置中添加 SHA1 和 SHA256 指纹
-        
-        如何获取 SHA1 和 SHA256 指纹？
-        
-        (1). 获取调试签名 SHA1 和 SHA256
-        
-        - 在Mac上，运行：
-        
-        keytool -exportcert -list -v \
-        -alias androiddebugkey -keystore ~/.android/debug.keystore
-        
-        - 在Windows上, 运行:
-        
-        keytool -exportcert -list -v \
-        -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
-        
-        然后输入密码, 初始密码是 "android"
-        
-        (1). 获取正式签名 SHA1 和 SHA256
-        
-        keytool -exportcert -list -v \
-        -alias 密钥名 -keystore 密钥库路径
-        
-        然后输入密钥密码即可。
-        
+            
+            如何获取 SHA1 和 SHA256 指纹？
+            
+            (1). 获取调试签名 SHA1 和 SHA256
+            
+            - 在Mac上，运行：
+            
+            keytool -exportcert -list -v \
+            -alias androiddebugkey -keystore ~/.android/debug.keystore
+            
+            - 在Windows上, 运行:
+            
+            keytool -exportcert -list -v \
+            -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+            
+            然后输入密码, 初始密码是 "android"
+            
+            (1). 获取正式签名 SHA1 和 SHA256
+            
+            keytool -exportcert -list -v \
+            -alias 密钥名 -keystore 密钥库路径
+            
+            然后输入密钥密码即可。
+            
     3. 在 开发 &rarr; Authentication &rarr; 登录方法 &rarr; 启用Google登录
     
     4. 下载 *google-service.json*, 在 *google-service.json* 中获取 google web client id
