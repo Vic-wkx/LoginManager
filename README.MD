@@ -26,8 +26,9 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-        implementation 'com.android.support:design:28.0.0'
         implementation 'com.github.wkxjc:LoginManager:1.2'
+        // make sure you have added support-design library, you can use your own version
+        implementation 'com.android.support:design:28.0.0'
 }
 ```
 
@@ -55,11 +56,13 @@ class MainActivity : BaseLoginActivity() {
     }
 
     override fun onLoginSuccess(type: String, auth: LoginAuth) {
-        Log.d("~~~", "type:$type, token:${auth.token}, email:${auth.email}")
+        Log.d("~~~", "Login Result: Success\n\nLogin type:$type\n\nauth:$auth")
+        tv_login_result.text = "Login Result: Success\n\nLogin type:$type\n\nauth:$auth"
     }
 
     override fun onLoginFail(type: String, cause: String) {
-        Log.d("~~~","type:$type, cause:$cause")
+        Log.d("~~~","Login Result: Fail\n\nLogin type:$type\n\ncause:$cause")
+        tv_login_result.text = "Login Result: Fail\n\nLogin type:$type\n\ncause:$cause"
     }
 }
 ```
