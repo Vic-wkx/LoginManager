@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v4.app.FragmentActivity
+import android.text.TextUtils
 import android.util.Log
 import com.base.library.login.common.constants.LoginConstants.Companion.FACEBOOK
 import com.base.library.login.common.constants.LoginConstants.Companion.GOOGLE
@@ -43,6 +44,7 @@ class LoginManager(private val activity: FragmentActivity, private val onLoginLi
             val metaData = applicationInfo.metaData
             val twitterConsumerKey = metaData.get("twitter_consumer_key")?.toString()
             val twitterConsumerSecret = metaData.get("twitter_consumer_secret")?.toString()
+            if (TextUtils.isEmpty(twitterConsumerKey) || TextUtils.isEmpty(twitterConsumerSecret)) return
             val config = TwitterConfig.Builder(app)
                 .logger(DefaultLogger(Log.DEBUG))
                 .twitterAuthConfig(TwitterAuthConfig(twitterConsumerKey, twitterConsumerSecret))

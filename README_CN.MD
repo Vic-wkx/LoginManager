@@ -1,4 +1,4 @@
-![release](https://img.shields.io/badge/release-1.2-green.svg)
+![release](https://img.shields.io/badge/release-1.3-green.svg)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # LoginManager 中文文档 | [English Doc](https://github.com/wkxjc/LoginManager/blob/master/README.MD)
@@ -26,7 +26,7 @@ allprojects {
 
 ```
 dependencies {
-        implementation 'com.github.wkxjc:LoginManager:1.2'
+        implementation 'com.github.wkxjc:LoginManager:1.3'
         // 确保添加了support-design依赖，可以使用你自己使用的版本
         implementation 'com.android.support:design:28.0.0'
 }
@@ -110,8 +110,6 @@ class MyApplication : Application() {
 }
 ```
 
-第四步. 添加firebase的 *google-service.json* 文件到主模块 app/ 目录下
-
 ## 如何获取这些key
 
 - Facebook: 获取 facebook app id
@@ -164,7 +162,7 @@ class MyApplication : Application() {
         -alias androiddebugkey -keystore ~/.android/debug.keystore
         
         - 在Windows上, 运行:
-
+        
         keytool -exportcert -list -v \
         -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
         
@@ -179,9 +177,7 @@ class MyApplication : Application() {
     
     3. 在 开发 &rarr; Authentication &rarr; 登录方法 &rarr; 启用Google登录
     
-    3. 下载 *google-service.json*, 放置在主模块的 app/ 目录下
-    
-    4. 在 *google-service.json* 中获取 google web client id
+    4. 下载 *google-service.json*, 在 *google-service.json* 中获取 google web client id
     
 - Twitter: 获取 twitter consumer key 和 twitter consumer secret
 
@@ -229,6 +225,11 @@ abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {
     }
 }
 ```
+
+## 不希望添加全部的登录方式？
+
+你可以单独使用其中任何一个功能。
+
 ## Bug 反馈
 
 如果您有任何反馈或建议，欢迎提交到 [Github issues](https://github.com/wkxjc/LoginManager/issues).

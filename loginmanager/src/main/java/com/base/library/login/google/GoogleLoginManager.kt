@@ -59,10 +59,12 @@ class GoogleLoginManager(private val fragmentActivity: FragmentActivity, private
             }
             val token = account?.idToken
             if (account == null || token == null || TextUtils.isEmpty(token)) {
-                onLoginListener.onLoginFail(GOOGLE, "Google Login fail, token is null, please ensure:\n" +
-                        "1. Added SHA1 and SHA256 in Firebase console, and enabled google login\n" +
-                        "2. Downloaded the latest google-service.json\n" +
-                        "3. The correct web client id is configured in AndroidManifest")
+                onLoginListener.onLoginFail(
+                    GOOGLE, "Google Login fail, token is null, please ensure:\n" +
+                            "1. Added SHA1 and SHA256 in Firebase console, and enabled google login\n" +
+                            "2. Downloaded the latest google-service.json\n" +
+                            "3. The correct web client id is configured in AndroidManifest"
+                )
                 return
             }
             val auth = LoginAuth().apply {

@@ -1,4 +1,4 @@
-![release](https://img.shields.io/badge/release-1.2-green.svg)
+![release](https://img.shields.io/badge/release-1.3-green.svg)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # LoginManager English Doc | [中文文档](https://github.com/wkxjc/LoginManager/blob/master/README_CN.MD)
@@ -26,7 +26,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-        implementation 'com.github.wkxjc:LoginManager:1.2'
+        implementation 'com.github.wkxjc:LoginManager:1.3'
         // make sure you have added support-design library, you can use your own version
         implementation 'com.android.support:design:28.0.0'
 }
@@ -110,8 +110,6 @@ class MyApplication : Application() {
 }
 ```
 
-Step 4. add *google-service.json* of firebase to app/ directory of main module:
-
 ## How to get these key
 
 - Facebook: get facebook app id
@@ -164,7 +162,7 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
         -alias androiddebugkey -keystore ~/.android/debug.keystore
         
         - on Windows, run:
-
+        
         keytool -exportcert -list -v \
         -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
         
@@ -179,9 +177,7 @@ Step 4. add *google-service.json* of firebase to app/ directory of main module:
     
     3. in Develop &rarr; Authentication &rarr; login method &rarr; enable Google Login
     
-    3. Download *google-service.json*, move it to app/ directory of main module
-    
-    4. get the web client id in *google-service.json*
+    4. Download *google-service.json*, get the web client id in *google-service.json*
     
 - Twitter: get twitter consumer key and twitter consumer secret
 
@@ -229,6 +225,11 @@ abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {
     }
 }
 ```
+
+## Do not want to add all login method?
+
+You can use any of these features separately.
+
 ## Bug Feedback
 
 If you have any questions or suggestions, feel free to create an [issue](https://github.com/wkxjc/LoginManager/issues).

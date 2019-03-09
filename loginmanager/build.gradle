@@ -15,7 +15,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -36,9 +36,6 @@ dependencies {
         exclude group: "com.android.support"
     }
     api('com.google.android.gms:play-services-auth:16.0.1') {
-        exclude group: "com.android.support"
-    }
-    api('com.google.firebase:firebase-core:16.0.7') {
         exclude group: "com.android.support"
     }
 }
