@@ -62,7 +62,7 @@ class GoogleLoginManager(private val fragmentActivity: FragmentActivity, private
                 onLoginListener.onLoginFail(
                     GOOGLE, "Google Login fail, token is null, please ensure:\n" +
                             "1. Added SHA1 and SHA256 (debug and release jks) in Firebase console, and enabled google login\n" +
-                            "3. The correct web client id is configured in AndroidManifest"
+                            "2. The correct web client id is configured in AndroidManifest"
                 )
                 return
             }

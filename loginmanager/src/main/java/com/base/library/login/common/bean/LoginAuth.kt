@@ -20,7 +20,7 @@ class LoginAuth(
     var email: String = "",
     // twitter获取个人信息需要的参数，如果使用推特登录，需要将twitterSecret也传到后台
     var twitterSecret: String = ""
-){
+) {
     override fun toString(): String {
         return "name:$name\n\navatar:$avatar\n\nemail:$email\n\ntoken:$token\n\ntwitterSecret:$twitterSecret\n\n"
     }
