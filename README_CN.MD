@@ -130,6 +130,8 @@ class MyApplication : Application() {
             
             如何获取 Key Hashes?
             
+            (1). 获取调试Key Hashes
+            
             - 在Mac上, 运行:
             
             keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
@@ -141,6 +143,12 @@ class MyApplication : Application() {
             keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
             
             然后输入密码, 初始密码是 "android"
+            
+            (2). 获取正式Key Hashes
+            
+            keytool -exportcert -alias 密钥名 -keystore 密钥库路径 | openssl sha1 -binary | openssl base64
+            
+            然后输入密钥密码即可
             
         &rarr; 打开 "单点登录"
         

@@ -130,6 +130,8 @@ class MyApplication : Application() {
             
             How to get Key Hashes?
             
+            (1). get debug Key Hashes
+            
             - On Mac, run:
             
             keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
@@ -141,6 +143,12 @@ class MyApplication : Application() {
             keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
             
             Then enter password, The initial password is "android"
+            
+            (2). get release Key Hashes
+            
+            keytool -exportcert -alias <RELEASE_KEY_ALIAS> -keystore <RELEASE_KEY_PATH> | openssl sha1 -binary | openssl base64
+            
+            Then enter keystore password
             
         &rarr; turn on "Single Sign On"
         
