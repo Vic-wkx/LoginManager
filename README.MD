@@ -26,7 +26,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-        implementation 'com.github.wkxjc:LoginManager:2.0'
+        implementation 'com.github.wkxjc:LoginManager:2.1'
         // make sure you have added support-design library, you can use your own version
         implementation 'com.android.support:design:28.0.0'
 }
