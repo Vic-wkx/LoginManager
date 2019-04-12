@@ -60,9 +60,9 @@ class FacebookLoginManager(private val context: Context, private val onLoginList
     }
 
     override fun onCompleted(response: GraphResponse?) {
-        val name = response?.jsonObject?.getString("name") ?: ""
-        val avatar = response?.jsonObject?.getJSONObject("picture")?.getJSONObject("data")?.getString("url") ?: ""
-        val email = response?.jsonObject?.getString("email") ?: ""
+        val name = response?.jsonObject?.optString("name") ?: ""
+        val avatar = response?.jsonObject?.getJSONObject("picture")?.getJSONObject("data")?.optString("url") ?: ""
+        val email = response?.jsonObject?.optString("email") ?: ""
         auth.name = name
         auth.avatar = avatar
         auth.email = email
