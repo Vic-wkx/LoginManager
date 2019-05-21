@@ -15,6 +15,7 @@ import com.base.library.login.common.listener.OnLoginListener
  * Date:    2019-05-21
  */
 class LoginManagerFactory(private val activity: FragmentActivity, private val onLoginListener: OnLoginListener) {
+
     /**
      * 反射获取对应的LoginManager
      */
