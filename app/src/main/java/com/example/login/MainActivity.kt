@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import com.base.library.login.base.BaseLoginActivity
 import com.base.library.login.common.bean.LoginAuth
-import com.base.library.login.common.constants.LoginConstants
+import com.base.library.login.common.constants.LoginType
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -20,26 +20,26 @@ class MainActivity : BaseLoginActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btn_google_login.setOnClickListener {
-            loginBy(LoginConstants.GOOGLE)
+        btnGoogleLogin.setOnClickListener {
+            loginBy(LoginType.Google)
         }
 
-        btn_facebook_login.setOnClickListener {
-            loginBy(LoginConstants.FACEBOOK)
+        btnFacebookLogin.setOnClickListener {
+            loginBy(LoginType.Facebook)
         }
 
-        btn_twitter_login.setOnClickListener {
-            loginBy(LoginConstants.TWITTER)
+        btnTwitterLogin.setOnClickListener {
+            loginBy(LoginType.Twitter)
         }
     }
 
-    override fun onLoginSuccess(type: String, auth: LoginAuth) {
+    override fun onLoginSuccess(type: LoginType, auth: LoginAuth) {
         Log.d("~~~", "Login Result: Success\n\nLogin type:$type\n\nauth:$auth")
-        tv_login_result.text = "Login Result: Success\n\nLogin type:$type\n\nauth:$auth"
+        tvLoginResult.text = "Login Result: Success\n\nLogin type:$type\n\nauth:$auth"
     }
 
-    override fun onLoginFail(type: String, cause: String) {
+    override fun onLoginFail(type: LoginType, cause: String) {
         Log.d("~~~", "Login Result: Fail\n\nLogin type:$type\n\ncause:$cause")
-        tv_login_result.text = "Login Result: Fail\n\nLogin type:$type\n\ncause:$cause"
+        tvLoginResult.text = "Login Result: Fail\n\nLogin type:$type\n\ncause:$cause"
     }
 }

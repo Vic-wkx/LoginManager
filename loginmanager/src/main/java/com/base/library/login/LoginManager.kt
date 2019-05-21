@@ -6,13 +6,11 @@ import android.content.pm.PackageManager
 import android.support.v4.app.FragmentActivity
 import android.text.TextUtils
 import android.util.Log
-import com.base.library.login.common.constants.LoginConstants.Companion.FACEBOOK
-import com.base.library.login.common.constants.LoginConstants.Companion.GOOGLE
-import com.base.library.login.common.constants.LoginConstants.Companion.TWITTER
+import com.base.library.login.common.constants.LoginConstants.TWITTER_CONSUMER_KEY
+import com.base.library.login.common.constants.LoginConstants.TWITTER_CONSUMER_SECRET
+import com.base.library.login.common.constants.LoginType
+import com.base.library.login.common.listener.ILoginManager
 import com.base.library.login.common.listener.OnLoginListener
-import com.base.library.login.facebook.FacebookLoginManager
-import com.base.library.login.google.GoogleLoginManager
-import com.base.library.login.twitter.TwitterLoginManager
 import com.twitter.sdk.android.core.DefaultLogger
 import com.twitter.sdk.android.core.Twitter
 import com.twitter.sdk.android.core.TwitterAuthConfig
@@ -29,9 +27,9 @@ import com.twitter.sdk.android.core.TwitterConfig
  * Date:    2018/12/4
  */
 class LoginManager(private val activity: FragmentActivity, private val onLoginListener: OnLoginListener) {
-    private var facebookLoginManager: FacebookLoginManager? = null
-    private var googleLoginManager: GoogleLoginManager? = null
-    private var twitterLoginManager: TwitterLoginManager? = null
+
+    private val managerMap by lazy { HashMap<LoginType, ILoginManager>() }
+    private val managerFactory by lazy { LoginManagerFactory(activity, onLoginListener) }
 
     companion object {
 
@@ -42,8 +40,8 @@ class LoginManager(private val activity: FragmentActivity, private val onLoginLi
         private fun initTwitterLogin(app: Application) {
             val applicationInfo = app.packageManager.getApplicationInfo(app.packageName, PackageManager.GET_META_DATA)
             val metaData = applicationInfo.metaData
-            val twitterConsumerKey = metaData.get("twitter_consumer_key")?.toString()
-            val twitterConsumerSecret = metaData.get("twitter_consumer_secret")?.toString()
+            val twitterConsumerKey = metaData.get(TWITTER_CONSUMER_KEY)?.toString()
+            val twitterConsumerSecret = metaData.get(TWITTER_CONSUMER_SECRET)?.toString()
             if (TextUtils.isEmpty(twitterConsumerKey) || TextUtils.isEmpty(twitterConsumerSecret)) return
             val config = TwitterConfig.Builder(app)
                 .logger(DefaultLogger(Log.DEBUG))
@@ -54,40 +52,27 @@ class LoginManager(private val activity: FragmentActivity, private val onLoginLi
         }
     }
 
+    fun loginBy(type: LoginType) {
+        getLoginManager(type).login()
+    }
 
-    fun loginBy(type: String) {
-        when (type) {
-            FACEBOOK -> getFacebookLoginManager()?.login()
-            GOOGLE -> getGoogleLoginManager()?.login()
-            TWITTER -> getTwitterLoginManager()?.login()
+    private fun getLoginManager(type: LoginType): ILoginManager {
+        managerMap[type]?:let {
+            managerMap[type] = managerFactory.create(type)
         }
-    }
-
-    private fun getFacebookLoginManager(): FacebookLoginManager? {
-        if (facebookLoginManager == null)
-            facebookLoginManager = FacebookLoginManager(activity, onLoginListener)
-        return facebookLoginManager
-    }
-
-    private fun getGoogleLoginManager(): GoogleLoginManager? {
-        if (googleLoginManager == null)
-            googleLoginManager = GoogleLoginManager(activity, onLoginListener)
-        return googleLoginManager
-    }
-
-    private fun getTwitterLoginManager(): TwitterLoginManager? {
-        if (twitterLoginManager == null)
-            twitterLoginManager = TwitterLoginManager(activity, onLoginListener)
-        return twitterLoginManager
+        return managerMap[type]!!
     }
 
     fun handleActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        facebookLoginManager?.handleActivityResult(requestCode, resultCode, data)
-        googleLoginManager?.handleActivityResult(requestCode, data)
-        twitterLoginManager?.handleActivityResult(requestCode, resultCode, data)
+        managerMap.values.forEach {
+            it.handleActivityResult(requestCode, resultCode, data)
+        }
     }
 
     fun release() {
-        facebookLoginManager?.release()
+        managerMap.values.forEach {
+            it.release()
+        }
+        managerMap.clear()
     }
 }

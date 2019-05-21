@@ -3,6 +3,7 @@ package com.base.library.login.base
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import com.base.library.login.LoginManager
+import com.base.library.login.common.constants.LoginType
 import com.base.library.login.common.listener.OnLoginListener
 
 /**
@@ -22,7 +23,7 @@ abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {
         loginManager.handleActivityResult(requestCode, resultCode, data)
     }
 
-    fun loginBy(type: String) {
+    fun loginBy(type: LoginType) {
         loginManager.loginBy(type)
     }
 
