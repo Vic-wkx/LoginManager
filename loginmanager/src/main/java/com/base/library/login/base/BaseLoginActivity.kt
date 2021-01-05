@@ -1,7 +1,7 @@
 package com.base.library.login.base
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.base.library.login.LoginManager
 import com.base.library.login.common.constants.LoginType
 import com.base.library.login.common.listener.OnLoginListener
@@ -11,7 +11,6 @@ import com.base.library.login.common.listener.OnLoginListener
  * 登录基类，可以继承此类实现登录，或者仿照此类中的方法调用LoginManager
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2018/9/18
  */
 abstract class BaseLoginActivity : AppCompatActivity(), OnLoginListener {

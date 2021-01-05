@@ -3,7 +3,7 @@ package com.base.library.login
 import android.app.Application
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.text.TextUtils
 import android.util.Log
 import com.base.library.login.common.constants.LoginConstants.TWITTER_CONSUMER_KEY
@@ -23,7 +23,6 @@ import com.twitter.sdk.android.core.TwitterConfig
  * 使用方式见[com.base.library.login.base.BaseLoginActivity]
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2018/12/4
  */
 class LoginManager(private val activity: FragmentActivity, private val onLoginListener: OnLoginListener) {
@@ -57,7 +56,7 @@ class LoginManager(private val activity: FragmentActivity, private val onLoginLi
     }
 
     private fun getLoginManager(type: LoginType): ILoginManager {
-        managerMap[type]?:let {
+        managerMap[type] ?: let {
             managerMap[type] = managerFactory.create(type)
         }
         return managerMap[type]!!

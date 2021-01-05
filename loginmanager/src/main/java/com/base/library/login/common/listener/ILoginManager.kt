@@ -7,7 +7,6 @@ import android.content.Intent
  * LoginManager接口
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2019-05-21
  */
 interface ILoginManager {

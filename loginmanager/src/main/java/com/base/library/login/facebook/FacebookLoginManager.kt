@@ -18,7 +18,6 @@ import com.facebook.login.widget.LoginButton
  * Facebook登录管理类
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2018/12/4
  */
 class FacebookLoginManager(private val context: Context, private val onLoginListener: OnLoginListener) :

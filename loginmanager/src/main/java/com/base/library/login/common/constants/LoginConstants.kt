@@ -5,7 +5,6 @@ package com.base.library.login.common.constants
  * 登录常量类
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2018/11/26
  */
 object LoginConstants {

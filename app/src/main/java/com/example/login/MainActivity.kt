@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_main.*
  * Main Page
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2019/3/8
  */
 class MainActivity : BaseLoginActivity() {

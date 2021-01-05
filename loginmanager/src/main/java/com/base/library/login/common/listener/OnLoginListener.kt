@@ -8,7 +8,6 @@ import com.base.library.login.common.constants.LoginType
  * 登录接口
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2018/12/4
  */
 interface OnLoginListener {

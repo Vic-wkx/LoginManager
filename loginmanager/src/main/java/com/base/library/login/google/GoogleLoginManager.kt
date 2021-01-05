@@ -2,7 +2,7 @@ package com.base.library.login.google
 
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import android.text.TextUtils
 import com.base.library.login.common.bean.LoginAuth
 import com.base.library.login.common.constants.LoginConstants
@@ -20,10 +20,9 @@ import com.google.android.gms.common.api.GoogleApiClient
  * Google登录管理类
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2018/12/4
  */
-class GoogleLoginManager(private val fragmentActivity: FragmentActivity, private val onLoginListener: OnLoginListener) :
+class GoogleLoginManager(private val fragmentActivity: androidx.fragment.app.FragmentActivity, private val onLoginListener: OnLoginListener) :
     GoogleApiClient.OnConnectionFailedListener, ILoginManager {
 
     private val signInOptions by lazy {
@@ -57,7 +56,7 @@ class GoogleLoginManager(private val fragmentActivity: FragmentActivity, private
     override fun handleActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == LoginConstants.REQUEST_CODE_GOOGLE_SIGN_IN) {
             val account = data?.let {
-                Auth.GoogleSignInApi.getSignInResultFromIntent(it).signInAccount
+                Auth.GoogleSignInApi.getSignInResultFromIntent(it)?.signInAccount
             }
             val token = account?.idToken
             if (account == null || token == null || TextUtils.isEmpty(token)) {

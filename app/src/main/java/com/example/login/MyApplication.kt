@@ -8,7 +8,6 @@ import com.base.library.login.LoginManager
  * App entry
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2019/3/8
  */
 class MyApplication : Application() {

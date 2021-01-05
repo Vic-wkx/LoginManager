@@ -16,7 +16,6 @@ import com.twitter.sdk.android.core.models.User
  * Twitter登录管理类
  *
  * @author  Alpinist Wang
- * Company: Mobile CPX
  * Date:    2018/12/4
  */
 class TwitterLoginManager(context: Context, private val onLoginListener: OnLoginListener) :
