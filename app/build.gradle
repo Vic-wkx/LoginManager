@@ -29,5 +29,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     debugImplementation project(':loginmanager')
-    releaseImplementation 'com.github.wkxjc:LoginManager:2.1'
+//    releaseImplementation 'com.github.wkxjc:LoginManager:2.2'
 }

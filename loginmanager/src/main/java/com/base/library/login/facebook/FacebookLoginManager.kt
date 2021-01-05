@@ -37,7 +37,7 @@ class FacebookLoginManager(private val context: Context, private val onLoginList
         if (null != AccessToken.getCurrentAccessToken()) {
             LoginManager.getInstance().logOut()
         }
-        loginButton.setReadPermissions(arrayListOf("email"))
+        loginButton.setPermissions("email")
         loginButton.registerCallback(callbackManager, this)
         loginButton.callOnClick()
     }
