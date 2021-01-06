@@ -26,7 +26,7 @@ allprojects {
 
 ```
 dependencies {
-        implementation 'com.github.wkxjc:LoginManager:2.2'
+        implementation 'com.github.wkxjc:LoginManager:2.3'
 }
 ```
 
